@@ -68,8 +68,8 @@ def train(metadata):
 
         tqdm_dataloader = tqdm(dataloader_training)
 
-        losses = torch.zeros(1, dtype=torch.float64)
-        accuracies = torch.zeros(1, dtype=torch.float64)
+        losses = torch.zeros(1, dtype=torch.float64,device = device)
+        accuracies = torch.zeros(1, dtype=torch.float64, device = device)
 
         
         for iteration , batch in enumerate(tqdm_dataloader):
