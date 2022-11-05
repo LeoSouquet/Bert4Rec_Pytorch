@@ -3,12 +3,12 @@ import os
 
 #General Parameters
 model_init_seed = int(os.environ.get('MODEL_INIT_SEED',100))
-init_weights =  os.environ.get('INIT_WEIGHT','model.pth')
+init_weights =  os.environ.get('INIT_WEIGHT','NONE')
 
 #Data Preparation
 path_to_record = os.environ.get('PATH_TO_RECORD','data\\') 
 file_idmovies_to_title = os.environ.get('FILE_IDMOVIES_TO_TITLE','data\\movie_title_by_index.json')
-word_size = int(os.environ.get('WORD_SIZE',40857))  #To be Determined Automatically
+word_size = int(os.environ.get('WORD_SIZE',40858))  #To be Determined Automatically
 CLOZE_MARK = word_size + 1
 max_len = int(os.environ.get('MAX_LEN',100))
 

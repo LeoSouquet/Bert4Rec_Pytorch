@@ -17,11 +17,18 @@ pip install -r requirements.txt  # install
 
 </details>
 
+### Google Colab
+This repo can be tested using the following notebook.
+As this repo is private, you will need to configure a token to clone the repo:
+
+
+[Google Colab Notebook](https://colab.research.google.com/drive/1zgll405C0HezraZIHapN__9Y-i9rfCC3?usp=sharing)
 
 ## Inference
 
 
 ### The script *download_weights.sh* will only download the weights locally.
+*Requirements*: AWS CLI is required to download the weights. (https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 ```
 bash download_weights.sh
 ```
@@ -62,12 +69,13 @@ python training.py
 
 ## Testing
 <details>
-run the command:
-```
-python -m unittest tests.test_bert4rec
-```
+run the command:` python -m unittest tests.test_bert4rec`
 </details>
 
+
+## Additional Information
+The Vocabular size has been set to the maximum number of films in the *movie_title_by_index.json* file: **40857**
+However, after parsing the data record, only **28221** are listed in the data.
 
 ## Sources Used:
 - [https://github.com/FeiSun/BERT4Rec](https://github.com/FeiSun/BERT4Rec)
