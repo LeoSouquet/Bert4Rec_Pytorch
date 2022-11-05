@@ -87,8 +87,6 @@ def train(metadata):
 
             accuracy = calculate_accuracy(predictions, labels)
 
-            import ipdb; ipdb.set_trace()
-
             losses += loss #Check because not sure about the detach
             accuracies += accuracy
 
