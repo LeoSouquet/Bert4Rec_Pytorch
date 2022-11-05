@@ -68,10 +68,11 @@ def train(metadata):
 
         tqdm_dataloader = tqdm(dataloader_training)
 
-        losses = []
-        accuracies = []
+        losses = torch.zeros(1, dtype=torch.float64)
+        accuracies = torch.zeros(1, dtype=torch.float64)
 
-        for _ , batch in enumerate(tqdm_dataloader):
+        
+        for iteration , batch in enumerate(tqdm_dataloader):
 
             batch = [x.to(device) for x in batch]
 
@@ -86,11 +87,13 @@ def train(metadata):
 
             accuracy = calculate_accuracy(predictions, labels)
 
-            losses.append(loss.cpu().detach().numpy()) #Check because not sure about the detach
-            accuracies.append(accuracy.cpu().detach().numpy())
+            import ipdb; ipdb.set_trace()
+
+            losses += loss #Check because not sure about the detach
+            accuracies += accuracy
 
             tqdm_dataloader.set_description(
-                'Epoch {}, loss {:.3f}, Acc: {:.3f} '.format(epoch+1, np.mean(losses), np.mean(accuracies)))
+                'Epoch {}, loss {:.3f}, Acc: {:.3f} '.format(epoch+1, (losses/(iteration+1)).item(), (accuracies / (iteration+1)).item()))
 
         #Move on step into the scheduler function
         lr_scheduler.step()
