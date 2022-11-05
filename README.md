@@ -44,6 +44,7 @@ You can change the path of the model in the file: `common_utils/metadata.py` in 
 ### Disclaimer
 For the purpose of this Demo, the model is stored on S3 with public access, models should have restricted access. Either through IAM, ACLs or VPN
 
+
 ## Training
 
 ### Data 
@@ -57,6 +58,10 @@ You can create your own *Dataset* class to integrate you own data.
 
 On the first loading, data will be cached in a *data.cache* in the same folder as the data files for faster loading.
 If data have changed, you can manually removed the *"data.cache* file.
+
+### Disclaimer
+For the purpose of this Demo, the full data set has been used for training. In a rel context, time should be spent on building a validation set that fits the project requirements.
+
 </details>
 
 <details open>
@@ -76,6 +81,8 @@ run the command:` python -m unittest tests.test_bert4rec`
 ## Additional Information
 The Vocabular size has been set to the maximum number of films in the *movie_title_by_index.json* file: **40857**
 However, after parsing the data record, only **28221** are listed in the data.
+
+
 
 ## Sources Used:
 - [https://github.com/FeiSun/BERT4Rec](https://github.com/FeiSun/BERT4Rec)
