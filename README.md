@@ -81,7 +81,8 @@ run the command:` python -m unittest tests.test_bert4rec`
 ## Additional Information
 The Vocabular size has been set to the maximum number of films in the *movie_title_by_index.json* file: **40857**
 However, after parsing the data record, only **28221** are listed in the data.
-
+- 1
+- 2
 
 
 ## Sources Used:
